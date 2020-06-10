@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    body{
+        height: 2000px;
+    }
+    @keyframes thisismoving {
+        0% {
+            left : 0;
+        }
+        50% {
+            left : calc(100% - 50px);
+        }
+        100% {
+            left : 0;
+        }
+    } 
+
+    .box{
+        width: 100%;
+        height: 100px;
+        background-color: aquamarine;
+        position: fixed;
+        top : 0;
+        left : 0;
+      
+    }
+    .inthebox{
+        width: 10%;
+        height: 100%;
+        background-color: deepskyblue;
+        text-align : center;
+        line-height: 100px;
+        color: white;
+        position: absolute;
+        /* 일반적으로 left와 right는 같이 쓰지 않고
+        top과 bottom은 같이 쓰지 않지만
+        width가 지정되어 있지 않은 경우는
+        left와 right를 같이 써서 width를 결정해준다.
+        height가 지정되어 있지 않은 경우는 top과 bottom을 같이 써서
+        height를 결정해준다.
+        position이 absolute인 경우 가로와 세로의 길이가 주어지지 않으면
+        자동으로 할당 되지 않음. */
+
+        animation-name: thisismoving;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+</style>
+<body>
+    <div class="box">
+       <div class="inthebox">이것도 눌러보시지!</div>
+    </div> 
+</body>
+</html>

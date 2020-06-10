@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visibility</title>
+    <style>
+        /* visibility는 해당 부분에 값이 있음을 인식한 후 그 부분만 안보이게 처리
+        display : none은 아예 그 부분이 없다고 간주
+        보통은 display :none을 사용하는데 그 이유는 visbility : hidden은 개발자 코드를 열면 해당 부분이 보여서
+        보안성 측면에선 추천X*/
+        .hong{
+            visibility: hidden;
+        }
+        .lim{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    안녕하세요. 제 이름은 <span class="hong">홍길동입니다/</span> 
+    만나서 반갑습니다. <br>
+    안녕하세요. 제 이름은 <span class="lim">임꺽정 입니다.</span>
+    만나서 반갑습니다. <br>
+</body>
+</html>

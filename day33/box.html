@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 40%;
+            background-color: yellow;
+            height: 50px;
+            display: block;
+            float: left;
+            /*기본적으론 block태그로 인해 새 라인에 자식 타입이 입력되긴 하지만 float: left로 지정했기 때문에 */
+        }
+        .box:nth-of-type(2){
+            background-color: green;
+        }
+        body::after{
+            clear: both;
+            content: '';
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        *{
+            margin : 0 auto;
+           
+        }
+        .intro{
+            font-size: 50px;
+            color: lightgreen;
+            text-align: center;
+            line-height: 100px;
+        }
+        body{
+            position: relative;
+        }
+        table{
+           width: 100px;
+           height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+     
+        input{
+           height: 20px;
+        }
+        input:hover{
+           border: 1px solid red;
+
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <div class="intro">회원가입</div>
+        </thead>
+        <tbody>
+            <tr>아이디 <br>
+                <input type="text" name="id"> <br>
+            </tr>
+            <tr>비밀번호 <br>
+                <input type="password" name="pw" placeholder="숫자/문자/기호 최대 16자"> <br>
+            </tr>
+            <tr>
+                비밀번호 확인 <br>
+                <input type="password" name="pw2"> <br>
+            </tr>
+            <tr>
+                이메일 <br>
+                <input type="email" name="email"> <br>
+            </tr>
+            <tr>
+                생년월일 <br>
+                <input type="number" name="birthyear" placeholder="년(4자)"> 
+                <input type="number" name="birthmonth"placeholder="월"> 
+                <input type="number" name="birthday" placeholder="일"> <br>
+            </tr>
+            <tr>
+            성별
+                <input type="radio" name=gender checked id="male"><label for="male">남성</label>
+                <input type="radio" name=gender id="female"><label for="female">여성</label><br>
+            </tr>
+            <tr>
+                전화번호 : <input type="number" name="phone1">-<input type="number" name="phone2">-<input type="number" name="phone3"><br>
+            </tr>
+            <input type="submit" value="회원가입"><br>
+        </tbody>
+    </table>
+</body>
+</html>

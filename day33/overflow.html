@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 500px;
+            border: 1px solid red;
+            /* overflow는 자식이 부모보다 크거나, 자식의 위치가 부모의 범위를 벗어난 경우
+            해당 내용(텍스트)을 어떻게 할지를 결정해주는 속성
+            - visible : 기본값
+            - hidden : 가리기
+            - scroll : 무조건 스크롤 생성
+            - audo : 넘어갈 때 스크롤 생성*/
+            /* 작업할 공간의 크기와 위치가 정해진 경우,작업을 하면서 해당하는 공간을 침범하지 않기 위해 overflow속성을 활용한다.
+            일반적으로는 hidden 또는 auto를 활용*/
+        }
+        .box{
+            height: 600px;
+            border: 1px solid black;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>안녕하세요.
+    </div>
+</body>
+</html>

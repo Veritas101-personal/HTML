@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 예제</title>
+    <style>
+        div{
+            background-color: green;
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+            border-width: 1px; /*모든 테두리의 두께를 1px로 설정*/
+            border :  solid red;
+            /*위를 기준으로 시계방향으로 위는 1px, 오른쪽은 2px, 아래는 3px, 왼쪽은 4px*/
+            border-width: 1px 2px 3px 4px;
+            /*위를 기준으로 시계방향으로 위는 1px, 오른쪽은 2px, 아래는 3px, 왼쪽은 2px (한쪽이 없으면 그 반대방향 정보가져와 대칭)*/
+            border-width: 1px 2px 3px;
+
+           border-top-color: red;
+           border-color: red blue yellow black;
+
+           border-top-style: solid;
+           border-style: solid dotted double ridge;
+
+           border : 1px solid red;
+           border-top: 1px solid blue;
+
+            padding-top: 10px;
+            padding-left: 10px;
+            padding: 10px;
+            /*
+            block 태그: 새 라인에서 시작. 가로세로의 길이 조절이 가능 여백 조절도 가능!
+            inline 태그: 현재 라인 유지. 가로,세로, 여백조절 불가
+            inline-block 태그: 현재라인 유지, 가로세로, 여백 조절 가능
+            */
+        }
+
+    </style>
+</head>
+<body>
+    <div>안녕<br><br><br><br><br></div>
+    안녕하세요.
+</body>
+</html>

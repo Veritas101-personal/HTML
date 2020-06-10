@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS:애니메이션</title>
+    <style>
+        /* 
+        1. 애니메이션을 등록
+        2. 등록한 애니메이션을 호출
+        */
+        /* 1. 애니메이션 등록
+        @keyframes 애니메이션명 {
+            시간비율(%){
+                스타일;
+            }    
+            시간비율{
+                스타일;
+            }
+        }
+        */
+        @keyframes identifier {
+            0%{
+                font-size: 16px;
+            }
+            50%{
+                font-size: 50px;
+            }
+            100%{
+                font-size: 16px;
+            }
+        }
+        /* 2. 애니메이션 호출 (선택자[selector]를 선택해서 지정)*/
+        .zoomin1, .zoomin2,.zoomin3,.zoomin4,.zoomin5{
+            /*애니메이션 이름만 지정. 즉 선택자 이름과 전혀 관계 없음*/
+            animation-name: identifier;
+            /*1000ms = 1초
+            애니메이션 시간이 5s=> 애니메이션이 0~100%까지 걸리는 시간이 5초라는 뜻*/
+            animation-duration: 2s;
+            /*애니메이션 반복 횟수 / infinite는 무한 반복*/
+            animation-iteration-count: infinite;
+        }
+      div{
+          height: 60px;
+      }
+      .zoomin2{
+          animation-timing-function: ease-in-out;
+      }
+      .zoomin3{
+          animation-timing-function: linear;
+      }
+      .zoomin4{
+          animation-timing-function: ease-in;
+      }
+      .zoomin5{
+          animation-timing-function: step-start;
+      }
+
+    </style>
+</head>
+<body>
+    <div>
+        <span class="zoomin1">꽝!</span>    
+    </div>
+    <div>
+        <span class="zoomin2">꽝!</span>    
+    </div>
+    <div>
+        <span class="zoomin3">꽝!</span>    
+    </div>
+    <div>
+        <span class="zoomin4">꽝!</span>    
+    </div>
+    <div>
+        <span class="zoomin5">꽝!</span>    
+    </div>
+</body>
+</html>
