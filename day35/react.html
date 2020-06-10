@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .box{
+            width: 50%;
+            height: 100vh;
+            float: left;
+            background-color: blue;
+        }
+        .box:nth-last-of-type(2){
+            background-color: yellow;
+        }
+        /* 640px 이하인 장치에서 다음 css를 적용하세요.*/ 
+        @media (max-width: 640px) {
+            .box{
+                width: 100%;
+            }
+        }
+        /* 조심할 점: @media도 입력 순서 및 데이터에 영향을 받는다. 
+        media가 전에 이미 입력된 데이터와 모순되면 제대로 작동 X */
+        
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>
