@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        .write{
+            margin-bottom: 5px;
+            height: 15px;
+        }
+        #add{
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <button id="add">추가</button> <br>
+        <div class="box">
+        </div>
+    </div>
+    <script>
+        var index=1;
+        $(function(){
+          $('#add').click(function(){
+            
+            var str = '<div>' + '<input type="text">' + '<button>클릭'+index+'</button>'+ '</div>';
+            index++;
+            $('.box').append(str);
+            //새로 추가된 박스 안에 있는 버튼을 클릭할 때 실행되는 이벤트 등록
+            $('.box').children().last().find('button').click(function () {
+                console.log($(this).prev().val());
+            })
+          })  
+            var cnt = 0;
+            function registerBtn() {
+                $('.box button').click(function() {
+                    var text = $(this).prev().val();
+                    console.log(text);
+                })
+            }
+        })
+    </script>
+</body>
+</html>

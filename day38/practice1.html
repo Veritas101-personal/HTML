@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제</title>
+    <script src="../js/jquery.js"></script>
+</head>
+<style>
+    .box{
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+    .border-red{
+        border: 2px solid red;
+    }
+</style>
+<body>
+    <button id="prev">이전</button>
+    <button id="next">다음</button>
+    <div class="res">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <script>
+
+            var cnt = 0;
+            var num = $('.res').children().length;
+
+        $(function(){
+            $('#next').click(function(){
+                /* css()메소드에서 여러 속성의 값을 변경하려면
+                {'속성':'값', '속성':'값'}의 형태로 매개변수를 넣어준다.*/
+
+                /* 첫번째만 적용할 경우
+                //$('.box').first().css({'border-color':'red','border-width':'2px'}); 
+                또는
+                $('.box').first().addClass('border-red');*/
+      
+                $('.res').children().eq(cnt).addClass('border-red');
+                if (cnt!=0){
+                    $('.res').children().eq(cnt-1).removeClass('border-red');
+                } else {
+                    
+                }
+
+                cnt++;
+
+                if(cnt>num){
+                    $('.res').children().eq(cnt-1).removeClass('border-red');
+                    cnt=0;
+                    $('.res').children().eq(cnt).addClass('border-red');
+                    cnt++;
+                }
+            })
+        })
+        $(function(){
+            $('#prev').click(function(){
+
+                if (cnt==0){
+                    $('.res').children().eq(cnt).removeClass('border-red');
+                    cnt=5;
+                    $('.res').children().eq(cnt).addClass('border-red');
+                }
+            })
+        })
+    </script>
+</body>
+</html>
