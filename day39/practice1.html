@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>설문지</h1>
+        <div class="body">
+            <div class="question"><b>질문1</b> <input type="text" id="qna" placeholder="질문을 입력하세요"> <button>확인</button> <br></div>
+            <button class="addquestion">질문추가</button>
+        </div>
+        <script>
+            var cnt = 2;
+            $(function(){
+                $('.addquestion').click(function(){
+                    alert('test');
+                    var str = '<b>질문'+cnt+'</b> <input type="text" id="qna" placeholder="질문을 입력하세요"> <button>확인</button></div> <br>'
+                    $('.question').append(str);
+                    cnt++;
+                })
+            })
+        </script>
+    </div>
+</body>
+</html>

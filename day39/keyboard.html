@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 관련 이벤트</title>
+    <script src="//code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <input type="text">
+    <script>
+        $(function(){
+            /*
+            keydown : 키보드를 눌렀을 때
+            keyup : 키보드를 땠을 때
+            keypress : 키보드를 눌렀을 때 (특수 키는 인식 불가 : ctrl, alt.../ 대소문자는 구분 가능)
+            */
+            /*
+            $(document).keydown(function(){
+                console.log('키 다운');
+            })
+            $(document).keyup(function(){
+                console.log('키 업');
+            })
+            $(document).keypress(function(){
+                console.log('키 프레스');
+            })
+            */
+            $('input').keyup(function(){
+
+            })
+            $('input').keypress(function(event){
+                if(event.keyCode < 48 && event.keyCode > 57) {
+                    // 눌린 키가 숫자가 아니면
+                    $(this).val(str);
+                    return ;
+                }
+                str = $(this).val();
+                console.log('val=',str);
+            })
+        })
+    </script>
+</body>
+</html>

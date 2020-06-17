@@ -1,0 +1,181 @@
+@charset "utf-8";
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+div{
+    display: block;
+}
+body{ 
+    /* 요건 최소 가로 길이가 1190px 라는 말*/
+    min-width: 1190px;
+}
+.container{
+    width: 1190px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+/* whale 박스 관련 css*/
+.naver-whale{
+    height: 49px;
+    background-color: rgb(0, 203, 174);
+    cursor: pointer;
+    
+}
+.ico_naver_whale{
+    display: block;
+    margin-top: 9px;
+    width: 110px;
+    height: 30px;
+    float: left;
+    background-position: -276px -225px;
+}
+.img-banner-whale{
+    display: block;
+    float: left;
+    margin-left: 130px;
+}
+.link-whale{
+    display: block;
+    width: 100%;
+    height: 49px;
+    display: block;
+}
+.banner-text{
+    font-weight: 700px;
+    margin-left: 388px;
+    font-size: 13px;
+    line-height: 49px;
+    letter-spacing: -.25px;
+    color: white;
+}
+.btn_download{
+    color: #00cbae;
+    background-color: #fff1c0;
+    font-size: 11px;
+    width: 68px;
+    height: 28px;
+    margin-left: 20px;
+    letter-spacing: -1px;
+    border-radius: 2px;
+    border: none;
+}
+.bt_sn{
+    text-decoration: underline;
+}
+.btn_close{
+    color: white;
+    font-size: 11px;
+    position: relative;
+    top: 0;
+    float: right;
+    height: 49px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+.btn_close_whale{
+    right: 0;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background-position: -429px -116px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+/* 검색창 관련 css*/
+.box-container-search{
+    height: 161px;
+}
+.a-logo{
+    position: absolute;
+    width: 222px;
+    height: 52px;
+    top: 48px;
+    background-position: 0 -161px;
+    
+}
+.green_window{
+    position: relative;
+    width: 586px;
+    height: 56px;
+    border: 2px solid #19ce60;
+    border-radius: 2px;
+    top: 53px;
+    margin-top: -27px;
+    left: -34px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.search-box{
+    padding: 13px;
+    margin: 1px;
+    width: 444px;
+    height: 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background-color: white;
+    outline: none;
+}
+.btn_keyboard{
+    width: 36px;
+    height: 100%;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.keyboard_image{
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 12px;
+    top: 15px;
+    left: 0px;
+    background-position: -400px -276px;
+}
+
+ /* 미분류 */
+.box-container-menu{
+    height: 50px;
+    border-top: 1px solid rgb(222, 237, 229);
+    border-bottom: 1px solid rgb(222, 237, 229);
+}
+.box-container-body{
+    height: 2757px;
+    position: relative;
+    margin: 0 auto;
+    z-index: 11;
+}
+.box-body-left{
+    float: left;
+    width: 750px;
+    height: 2717px;
+    display: block;
+    background-color: aqua;
+}
+.box-body-right{
+    float: right;
+    width: 350px;
+    height: 1614px;
+    background-color: aquamarine;
+}
+.box-container-footer{
+    height: 424px;
+    background-color: rgb(250, 251, 252);
+}
+
+
+/*배경 이미지 클래스*/
+.bg-44265f{
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
+    background-repeat: no-repeat;
+    background-size: 471px 442px;
+}

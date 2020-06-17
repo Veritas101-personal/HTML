@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h1>설문지</h1>
+    <div class="container">
+        <div class="main-q">
+            <b>질문1</b>
+            <div class="sub-q"> 
+                <b>질문1-1</b> <input type="text" class="question" placeholder="질문을 입력하세요"> <button class="confirm">확인</button> <button class="delete">삭제</button> <br>
+            </div>
+                <button class="add-sub-q">서브질문 추가</button> <br>
+        </div>
+        <div class="add-main">
+            <button class="add-main-q">메인 질문 추가</button>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            var mainArr=[1];
+            $('.add-main-q').click(function(){
+                mainArr.push(1);
+                var str = '<b>질문'+mainArr.length+'</b><div class="sub-q"><b>질문'+mainArr.length+'-1</b> <input type="text" class="question" placeholder="질문을 입력하세요"> <button class="confirm">확인</button> <button class="delete">삭제</button><br> <br></div><button class="add-sub-q">서브질문 추가</button> <br></div>';
+                $('.main-q').append(str);
+                registerBtn($('.main-q').last().find('.add-sub-q'));
+                
+            })
+        
+       
+        function registerBtn(obj){
+                obj.click(function(){
+                    var main = $(this).parent().children().eq(0).text().substring(2);
+                    main = parseInt(main);
+                    mainArr[main-1]++;
+                    var str = '<b>질문'+main+'-'+mainArr[main-1]+'</b> <input type="text" class="question" placeholder="질문을 입력하세요"> <button class="confirm">확인</button> <button class="delete">삭제</button></div>';
+                    $(this).prev().after(str);
+                    deleteSubtraction($('.main-q').prev().find('.delete'));
+                })
+        }
+        deleteSubtraction($('.delete'));
+        function deleteSubtraction(obj){
+            obj.click(function(){
+                var str = '<div class="sub-q"> <b>질문1-1</b> <input type="text" class="question" placeholder="질문을 입력하세요"> <button class="confirm">확인</button> <button class="delete">삭제</button></div>'
+            })
+        }
+        })
+    </script>
+</body>
+</html>
