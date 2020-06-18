@@ -22,13 +22,66 @@
         <div class="container">
             <a href="https://www.naver.com" class="a-logo bg-44265f"></a>
             <div class="green_window">
-                <input type="text" class="search-box"> <a href="javascript:;" role="button" class="btn_keyboard"><span class="keyboard_image bg-44265f"></span></a>
-                
+                <form action="">
+                    <input type="text" class="search-box"> 
+                    <a href="javascript:;" role="button" class="btn_keyboard">
+                        <span class="keyboard_image bg-44265f"> </span>
+                        <p class="msg-keyboard bg-44265f"></p>
+                    </a>
+                    <a href="#" class="btn-auto-search-fold">
+                        <i class="icon-auto-search bg-44265f"></i>
+                    </a>
+                    <a href="#" class="btn_submit">
+                        <span class="icon-search bg-44265f"></span>
+                    </a>
+                    <div class="autoframe">
+                       <div class="info_words">현재 자동완성 기능을 사용하고 계십니다.</div>
+                       <div class="btnGroup">
+                           <span class="fl">
+                                <a href="#" class="help">도움말</a> | 
+                                <a href="#" class="report">신고</a>
+                           </span>
+                           <a class="auto">자동완성 끄기</a>
+                       </div>
+                       <span class="auto-helper">기능을 다시 켤 때는 을 입력하세요.</span>
+                    </div>
+                </form> 
+            </div>
+            <div class="box-container-service">
+                <a href="#" class="link-set">네이버를 시작페이지로</a>
+                <i class="icon-service-bar"></i>
+                <a href="#" class="link-jr">
+                    <i class="icon-jr bg-44265f"></i>
+                </a>
+                <a href="" class="link-happybean">
+                    <i class="icon-happybean bg-44265f"></i>
+                </a>
             </div>
         </div>
     </div>
     <div class="box-container-menu">
-        <div class="container"></div>
+        <div class="container">
+            <ul class="main-service-list">
+                <li class="main-service"><i class="image-mail bg-44265f"></i>메일</li>
+                <li class="main-service">카페</li>
+                <li class="main-service">블로그</li>
+                <li class="main-service">지식iN</li>
+                <li class="main-service">쇼핑</li>
+                <li class="main-service">Pay</li>
+                <li class="main-service">TV</li>
+            </ul>
+            <ul class="favorite-service-list">
+                <li class="favorite-service">사진</li>
+                <li class="favorite-service">뉴스</li>
+                <li class="favorite-service">증권</li>
+                <li class="favorite-service">부동산</li>
+                <li class="favorite-service">지도</li>
+                <li class="favorite-service">영화</li>
+                <li class="favorite-service">뮤직</li>
+                <li class="favorite-service">책</li>
+                <li class="favorite-service">웹툰</li>
+            </ul>
+        </div>
     </div>
     <div class="box-container-body">
         <div class="container">
@@ -41,5 +94,12 @@
     <div class="box-container-footer">
         <div class="container"></div>
     </div>
+    <script>
+        $(function(){
+            $('.btn-auto-search-fold').click(function(){
+
+            })
+        })
+    </script>
 </body>
 </html>

@@ -12,6 +12,9 @@ body{
     /* 요건 최소 가로 길이가 1190px 라는 말*/
     min-width: 1190px;
 }
+li{
+    display: list-item;
+}
 .container{
     width: 1190px;
     height: 100%;
@@ -141,13 +144,240 @@ body{
     left: 0px;
     background-position: -400px -276px;
 }
+.msg-keyboard{
+    position: absolute;
+    top: 42px;
+    left: -24px;
+    width: 68px;
+    height: 37px;
+    background-position: -161px -115px;
+    visibility: hidden;
+    display: none;
+}
 
- /* 미분류 */
+.btn_keyboard:hover > .msg-keyboard{
+    visibility: visible;
+    display: block;
+}
+.btn_keyboard:hover > .keyboard_image{
+    background-position: -64px -404px;
+}
+.btn-auto-search-fold{
+    position: absolute;
+    display: inline-block;
+    width: 22px;
+    height: 56px;
+    margin: -2px 0px 0px -6px;
+    right: 64px;
+}
+.btn-auto-search-open{
+    position: absolute;
+    display: block;
+    width: 22px;
+    height: 56px;
+    margin: -2px 0px 0px -6px;
+    right: 64px;
+}
+.icon-auto-search-fold{
+    display: block;
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    top: 42%;
+    left: 33%;
+    background-position: -429px -394px;
+}
+.icon-auto-search-open{
+    display: block;
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    top: 42%;
+    left: 33%;
+    background-position: -361px -308px;
+}
+.btn_submit{
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+    border-radius: 0 2px 2px 0;
+    background-color: #19ce60;
+}
+.icon-search{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-position: -429px -172px;
+    margin: 16px 0 0 16px;
+}
+.box-container-service{
+    position: absolute;
+    top: 12px;
+    right: 27px;
+}
+.autoframe{
+    width: 100%;
+    height: 90px;
+    display: block;
+    border: 1px solid rgb(222, 237, 229);
+    background-color: white;
+    z-index: 1;
+}
+.info_words{
+    padding: 17px 15px;
+    font-size: 12px;
+    color: #666666;
+}
+.btnGroup{
+    padding: 8px 0;
+    height: 17px;
+    overflow: hidden;
+    border: 1px solid #ebeef3;
+    border-width: 1px 0 0;
+    background: #f9fafc;
+    color: #666666;
+    font-size: 11px;
+    letter-spacing: -1px;
+
+}
+.fl{
+    float: left;    
+    padding: 2px 0 0 12px;
+}
+.auto{
+    float: right;
+    margin: 0 15px;
+    text-align: top;
+    text-decoration: underline;
+}
+.auto-helper{
+    position: absolute;
+    display: none;
+    bottom: 32px;
+    right: 16px;
+    height: 18px;
+    padding: 3px 4px 0;
+    line-height: 18px;
+    color: #444;
+    border: 1px solid #00c73c;
+    background-color: #f6fbf7;
+}
+
+.auto:hover > .auto-helper{
+    display: block;
+}
+.link-set{
+    font-size: 11px;
+    float: left;
+    color: #404040;
+}
+.link-set::after{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin: -3px 0 0 3px;
+    content: '';
+    vertical-align: top;
+    background-position: -391px -225px;
+}
+.link-set:hover{
+    text-decoration: underline;
+}
+.icon-service-bar{
+    float: left;
+    width: 1px;
+    height: 10px;
+    margin: 3px 7px;
+    background-color: #e4e8eb;
+}
+.link-jr{
+    float: left;
+    display: block;
+    width: 60px;
+    height: 10px;
+    margin: 3px;
+}
+.icon-jr{
+    display: inline-block;
+    width: 60px;
+    height: 10px;
+    vertical-align: top;
+    background-position: -348px -260px;
+}
+.link-jr:hover > .icon-jr{
+    background-position: -214px -308px;
+}
+.link-happybean{
+    float: left;
+    display: block;
+    width: 34px;
+    height: 11px;
+    margin: 3px;
+}
+.icon-happybean{
+    display: inline-block;
+    width: 34px;
+    height: 11px;
+    vertical-align: top;
+    background-position: -253px -323px;
+}
+.link-happybean:hover > .icon-happybean{
+    background-position: -214px -323px;
+}
+/*메뉴바*/
 .box-container-menu{
     height: 50px;
     border-top: 1px solid rgb(222, 237, 229);
     border-bottom: 1px solid rgb(222, 237, 229);
+    box-sizing: border-box;
 }
+.main-service-list{
+    width: 372px;
+    height: 30px;
+    margin: 10px 0;
+    float: left;
+    
+}
+.main-service{
+    float: left;
+    font-size: 15px;
+    font-weight: 700px;
+    line-height: 30px;
+    letter-spacing: -3px;
+    margin-left: 18px;
+}
+.main-service:nth-child(1){
+    margin-left: 0;
+}
+.favorite-service-list{
+    width: 409px;
+    height: 30px;
+    margin-left: 18px;
+    margin: 10px 0;
+    float: left;
+}
+.favorite-service{
+    float: left;
+    font-size: 15px;
+    font-weight: 700px;
+    line-height: 30px;
+    letter-spacing: -3px;
+    margin-left: 18px;
+}
+.favoirte-service:nth-child(1){
+    margin-left: 0;
+}
+.image-mail{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    margin: 3px 9px 0 0;
+    vertical-align: top;
+    background-position: -429px -227px;
+}
+ /* 미분류 */
 .box-container-body{
     height: 2757px;
     position: relative;
@@ -174,8 +404,12 @@ body{
 
 
 /*배경 이미지 클래스*/
+.link-set::after,
 .bg-44265f{
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
     background-repeat: no-repeat;
     background-size: 471px 442px;
+}
+.display-none{
+    display: none !important;
 }
