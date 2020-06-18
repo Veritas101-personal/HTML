@@ -7,6 +7,6 @@ $(function(){
     })
     $('.btn-auto-search-fold').click(function(){
         $('.autoframe').toggleClass('display-none');
-
+    
     })
 })

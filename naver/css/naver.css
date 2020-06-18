@@ -188,7 +188,7 @@ li{
     background-position: -429px -394px;
 }
 .icon-auto-search-open{
-    display: block;
+    display: none;
     width: 10px;
     height: 5px;
     position: absolute;
@@ -220,7 +220,7 @@ li{
 .autoframe{
     width: 100%;
     height: 90px;
-    display: block;
+    display: none;
     border: 1px solid rgb(222, 237, 229);
     background-color: white;
     z-index: 1;
@@ -411,5 +411,5 @@ li{
     background-size: 471px 442px;
 }
 .display-none{
-    display: none !important;
+    display: block !important;
 }
