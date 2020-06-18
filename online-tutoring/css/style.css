@@ -1,0 +1,42 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 1160px;
+}
+.box-head{
+    width: 100%;
+    height: 80px;
+}
+.box-image{
+    width: 100%;
+    height: 200px;
+    border: 1px solid black;
+}
+.box-menu{
+    width: 100%;
+    height: 60px;
+    background-color: lightblue;
+}
+.ham{
+    visibility: hidden;
+    display: none;
+}
+#ham-menu{
+    font-size: 40px;
+    line-height: 60px;
+    margin: auto;
+    color: white;
+}
+@media (max-width: 650px) {
+    .ham{
+        visibility: visible;
+        display: block;
+        float: right;
+        width: 10%;
+        height: 100%;
+        margin: auto;
+    }
+}
