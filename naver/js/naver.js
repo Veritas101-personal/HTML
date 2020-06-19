@@ -6,7 +6,17 @@ $(function(){
         e.preventDefault();
     })
     $('.btn-auto-search-fold').click(function(){
-        $('.autoframe').toggleClass('display-none');
+            $('.autoframe').toggleClass('display-none');
+            $('.icon-auto-search-fold').toggleClass('display-none');
+            $('.icon-auto-search-open').toggleClass('display-none');
     
     })
+    $('.btn-more').click(function(){
+        $('.btn-more').toggleClass('display-none');
+        $('.extra-service').toggleClass('extra-window');
+        $('.box-group-keyword').toggleClass('display-none');        
+        $('.box-service-menu').toggleClass('display-none');   
+        
+    })
 })
+    
