@@ -18,5 +18,8 @@ $(function(){
         $('.box-service-menu').toggleClass('display-none');   
         
     })
+    $('.btn-menu.set').click(function(){
+        
+    })
 })
     
