@@ -377,6 +377,23 @@ ul{
     letter-spacing: -3px;
     margin-left: 18px;
 }
+.favorite-service.box-empty{
+    width: 68px;
+    height: 28px;
+    border: 1px solid #19ce60;
+    border-radius: 2px;
+    background-color: #f7f9fa;
+    margin-left: 8px;
+    float: left;
+}
+.favorite-service.box-empty:first-of-type{
+    margin-left: 18px;
+}
+.favorite-service.box-empty.select{
+    border-color: #19ce60;
+    background-color: #fff;
+}
+
 .link-menu-black{
     color: black;
 }
@@ -504,7 +521,7 @@ ul{
 /*엑스트라바*/
 .extra-service{
     position: absolute;
-    display: none;
+    display: block;
     top: 52px;
     right: 0;
     left: 0;
@@ -544,6 +561,9 @@ ul{
 .service_data:hover{
     text-decoration: underline;
 }
+.service_data:hover>.extra-choice{
+    text-decoration: none;
+}
 a[name=dicall]{
     margin-top: 5px;
     color: gray;
@@ -559,19 +579,162 @@ a[name=dicall]::after{
     content: '';
     background-position: -417px -116px;
 }
+.extra-choice{
+    display: table;
+    overflow: hidden;
+    width: 1128px;
+    margin: 0 auto;
+    table-layout: fixed;
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: #e4e8eb;
+}
+.checkbox-service{
+    font-size: 13px;
+    line-height: 26px;
+    display: flex;
+    background-position: -43px -404px;
+}
+.checkbox-service>input{
+    display: none;
+}
+.btn-service-save,
+.btn-service-init{
+    display: block;
+    float: left;
+    margin-left: 3px;
+    padding: 7px 13px 5px;
+    border: 1px solid #dae1e6;
+    border-radius: 15px;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+}
+.btn-service-init::before{
+    display: inline-block;
+    width: 10px;
+    height: 13px;
+    margin-right: 6px;
+    content: '';
+    vertical-align: top;
+    background-position: -458px -157px;
+}
+.btn-service-save{
+    background-color: #19ce60;
+    border-color: #00c73c;
+    color: #fff;
+}
+/* 왼쪽 본문*/
+.box-body-left{
+    float: left;
+    width: 750px;
+    height: 2757px;
+    display: block;
+    background-color: aqua;
+}
+.container.body{
+    padding: 20px 30px;
+}
+#ad_banner{
+    position: relative;
+    display: block;
+    width: 750px;
+    height: 135px;
+}
+.newsstand{
+    width: 750px;
+    margin-top: 12px;
+}
+.news_header{
+    line-height: 24px;
+    position: relative;
+    padding: 12px 15px 11px 15px;
+    border: 1px solid #dae1e6;
+    background-color: #f7f9fa;
+}
+
+.issue_area{
+    font-size: 13px;
+    font-weight: 700;
+    float: left;
+    text-decoration: none;
+    color: #000;
+}
+.news_rolling{
+    float: left;
+    overflow: hidden;
+    width: 310px;
+    height: 24px;
+}
+.issue{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    /* 글이 2줄 이상이 되어야 하는 경우 한 줄로 유지할 때 nowrap*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    line-height: 24px;
+}
+.link_media{
+    font-size: 13px;
+    font-weight: bold;
+    float: left;
+    margin-right: 7px;
+    text-decoration: none;
+    line-height: 24px;
+    letter-spacing: -.2px;
+    color: #000;
+}
+.link_media::after{
+    display: inline-block;
+    width: 6px;
+    height: 10px;
+    margin: 7px 0 0 6px;
+    content: '';
+    vertical-align: top;
+    background-position: -417px -90px;  
+}
+.direct_area{
+    font-weight: 700;
+    float: right;
+}
+.link_news{
+    font-size: 13px;
+    float: left;
+    line-height: 24px;
+    font-weight: bold;
+    color: #3565c9;
+}
+.link_news::after{
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    margin-left: 8px;
+    content: '';
+    vertical-align: top;
+    vertical-align: 3px;
+    border-radius: 50%;
+    background-color: #c8ccd1;
+}
+.link_direct{
+    font-size: 13px;
+    float: left;
+    line-height: 24px;
+    font-weight: bold;
+    margin: 0 4px 0 7px;
+    color: #202020;
+}
+.link_direct::after{
+
+}
  /* 미분류 */
 .box-container-body{
     height: 2757px;
     position: relative;
     margin: 0 auto;
 }
-.box-body-left{
-    float: left;
-    width: 750px;
-    height: 2717px;
-    display: block;
-    background-color: aqua;
-}
+
 .box-body-right{
     float: right;
     width: 350px;
@@ -590,6 +753,8 @@ a[name=dicall]::after{
 .btn-keyword::after,
 a[name=dicall]::after,
 .btn-menu-set::before,
+.btn-service-init::before,
+.link_media::after,
 .bg-44265f{
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
     background-repeat: no-repeat;
@@ -598,6 +763,8 @@ a[name=dicall]::after,
 .display-none{
     display: none !important;
 }
-.extra-window{
+.news_header::after{
+    clear: both;
+    content: '';
     display: block;
 }
