@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.5.1.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .page{
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 200px;
+            padding: 10px;
+        }
+        .border{
+            display: inline-block;
+            width: 300px;
+            height: 160px;
+            padding: 25px;
+            border: 1px solid red;
+        }
+        .output{
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 40px;
+            line-height: 50px;
+        }
+        .buttons{
+            width: 100%;
+            height: 40px;
+            bottom: 0   ;
+            text-align: center;
+        }
+        .start,.stop,.record{
+            width: 100px;
+            height: 35px;
+        }
+        .display-none{
+            display: none;
+        }
+        .records{
+            display: inline-block;
+            width: 350px;
+            height: 210px;
+            border: 1px solid black;
+            vertical-align: top;
+        }
+        .records-header{
+            width: 100%;
+            height: 25px;
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 1px solid black;
+            font-size: 15px;
+            line-height: 25px;
+        }
+        .records-data{
+            width: calc(100% - 10px);
+            height: calc(100% - 36px);
+            padding: 5px;
+            text-align: center;
+            overflow: auto;
+        }
+        .box{
+            height: 49px;
+            line-height: 49px;
+            font-size:25px
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="border">
+            <div class="output">
+                <span class="hr">00</span>
+                <span class="colon">:</span>
+                <span class="min">00</span>
+                <span class="colon">:</span>
+                <span class="sec">00</span>
+                <span class="milisec">00</span>
+            </div>
+            <div class="buttons">
+                <button class="start">시작</button>
+                <button class="record display-none">기록</button>
+                <button class="stop">중지</button>
+            </div>
+        </div>
+    <div class="records">
+        <div class="records-header">records</div>
+        <div class="records-data">
+            <div class="box1 box"></div>
+            <div class="box2 box"></div>
+            <div class="box0 box"></div>
+        </div>
+    </div>
+</div>
+    <script>
+        var hr = 0;
+        var min = 0;
+        var sec = 0;
+        var milisec = 0;
+        var timeArr = [];
+        var timerInterval;
+        $(function(){
+            $('.start').click(function(){
+                $(this).toggleClass('display-none');
+                $('.record').removeClass('display-none');
+                $('.hr').text('0'+hr);
+                $('.min').text('0'+min);
+                $('.sec').text('0'+sec);
+                $('.milisec').text('0'+milisec);
+                $('.records-data').removeClass('box');
+                timerInterval = setInterval(function(){
+                    milisec++;
+                    if (milisec==100){
+                        milisec=0;
+                        sec++;
+                        if (sec == 60){
+                            sec = 0;
+                            min++;
+                            if (min==60) {
+                                min=0;
+                                hr++;
+                                $('.hr').text(hr);
+                                    if (hr < 10) {
+                                        $('.hr').text('0'+hr);
+                                    } else {
+                                        $('hr').text(hr);
+                                    }
+                            }
+                            if (min < 10) {
+                                $('.min').text('0'+min);
+                            } else {
+                                $('.min').text(min);
+                            }
+                        }
+                        if (sec < 10) {
+                            $('.sec').text('0'+sec);
+                        } else {
+                            $('.sec').text(sec);
+                        }
+                    }
+                    if(milisec <10){
+                        $('.milisec').text('0'+milisec);
+                    } else {
+                        $('.milisec').text(milisec);
+                    }
+                    },10)
+                
+                })
+            var cnt = 1;
+           
+            $('.record').click(function(){
+                var str = getTime();
+                cnt = cnt % 3;
+                $('.box'+cnt).html(str);
+                cnt++;
+                timeArr.push(str);
+
+            })
+            $('.stop').click(function(){
+                clearInterval(timerInterval);
+                $('.start').toggleClass('display-none');
+                $('.record').addClass('display-none');
+                milisec = 0; sec = 0; min = 0; hr = 0;
+                cnt = 1;
+            })
+            function printTime(selector,time){
+                if(time < 10) {
+                    $(selector).text('0'+time);
+                } else {
+                    $(selector).text(time);
+                }
+            }
+            function getTime(){
+                var str = '';
+                str += getStr(hr) + ' : ' + getStr(min) + ' : ' + getStr(sec) + " " + getStr(milisec);
+                return str;
+            }
+            function getStr(time){
+                if(time < 10) {
+                    return '0'+time;
+                } else {
+                    return time;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

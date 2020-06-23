@@ -502,6 +502,7 @@ ul{
 }
 .link-service-more,
 .btn-menu-set{
+    font-size: 12px;
     display: inline-block;
     margin-left: 3px;
     padding: 7px 13px 5px;
@@ -589,14 +590,33 @@ a[name=dicall]::after{
     border-style: solid;
     border-color: #e4e8eb;
 }
+.extra-select{
+    position: absolute;
+    display: block;
+    text-align: right;
+    width: 220px;
+    top: 11px;
+    right: 0;
+}
 .checkbox-service{
     font-size: 13px;
     line-height: 26px;
     display: flex;
-    background-position: -43px -404px;
+    cursor: default;
 }
 .checkbox-service>input{
     display: none;
+}
+.icon-check{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 4px 9px 0 0;
+    vertical-align: top;
+    background-position: -43px -404px;
+}
+.icon-checked{
+    background-position: -22px -404px;
 }
 .btn-service-save,
 .btn-service-init{
@@ -676,6 +696,9 @@ a[name=dicall]::after{
     font-size: 13px;
     line-height: 24px;
 }
+.box-issue{
+    float: left;
+}
 .link_media{
     font-size: 13px;
     font-weight: bold;
@@ -725,8 +748,111 @@ a[name=dicall]::after{
     margin: 0 4px 0 7px;
     color: #202020;
 }
-.link_direct::after{
 
+.adhere{
+    width: 750px;
+    height: 135px;
+    overflow: hidden;
+
+}
+.ad-image{
+    display: block;
+    height: 135px;
+}
+.ad-image>img{
+    float: left;
+}
+.ad-image:first-of-type{
+    margin-top: -270px;
+}
+.roller{
+    float: left;
+    width: 310px;
+    height: 24px;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+}
+.stand-header{
+    font-size: 14px;
+    line-height: 18px;
+    padding: 22px 0 16px;
+    display: block;
+}
+.link-news-stand{
+    font-weight: 700;
+    float: left;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #000;
+}
+.news-stand-buttons{
+    float: left;
+    margin-left: 10px;
+}
+.link-news-stand::before{
+    display: inline-block;
+    width: 27px;
+    height: 24px;
+    margin: -6px 1px 0 0;
+    content: '';
+    vertical-align: top;
+    background-position: -293px -357px;
+}
+.link-news-stand::after{
+    display: inline-block;
+    width: 7px;
+    height: 11px;
+    margin-left: 6px;
+    content: '';
+    vertical-align: top;
+    vertical-align: -1px;
+    background-position: -417px -58px;
+}
+.btn-sort,
+.btn-sort-all{
+    font-size: 14px;
+    text-decoration: none;
+    color: #505050;
+}
+.btn-sort-all::before{
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 0 8px 0 4px;
+    content: '';
+    vertical-align: top;
+    vertical-align: 3px;
+    border-radius: 50%;
+    background-color: #c7ccd1;
+}
+.stand-header-buttons{
+    float: right;
+}
+.btn-set{
+    display: inline-block;
+    width: 14px;
+    height: 13px;
+    vertical-align: top;
+    opacity: .7;
+    background-position: -77px -427px;
+    filter: alpha(opacity=70);
+}
+.btn-tile{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    vertical-align: top;
+    background-position: -458px -44px;
+}
+.btn-option{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: -1px 0 1px;
+    vertical-align: top;
+    opacity: .7;
+    background-position: 0 -427px;
 }
  /* 미분류 */
 .box-container-body{
@@ -755,6 +881,8 @@ a[name=dicall]::after,
 .btn-menu-set::before,
 .btn-service-init::before,
 .link_media::after,
+.link-news-stand::before,
+.link-news-stand::after,
 .bg-44265f{
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
     background-repeat: no-repeat;

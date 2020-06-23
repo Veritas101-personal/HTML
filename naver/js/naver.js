@@ -2,8 +2,9 @@ $(function(){
     var defaultMenu = ['사전','뉴스','증권','부동산','지도','영화','뮤직','책','웹툰'];
     var defaultMenuLink =['https://dict.naver.com','https://news.naver.com','https://finance.naver.com','https://land.naver.com','https://map.naver.com/v5/','https://movie.naver.com','https://vibe.naver.com/about','https://book.naver.com','https://comic.naver.com/index/nhn'];
     var selectMenu = [];
-    var selectAllLink = [];
+    var selectMenuLink = [];
     var allMenuLink = ['모든 링크가 위에처럼 있어야함'];
+    var tmpMenu = [];
 
     $('html').scrollTop(0);
     $('.btn_close').click(function(e){
@@ -20,7 +21,7 @@ $(function(){
     $('.btn-more').click(function(){
         $('.btn-more').toggleClass('display-none');
         $('.extra-service').toggleClass('display-none');
-        $('.extra-service.display').addClass('display-none');
+        $('.extra-select').toggleClass('display-none');
         $('.box-service-menu.set').removeClass('display-none');
         $('.box-group-keyword').toggleClass('display-none');  
         $('.box-service-menu').toggleClass('display-none');   
@@ -43,6 +44,15 @@ $(function(){
         })
 
     })
-    $('.')
+    setInterval(function(){
+        $('.ad-image').first().animate({'margin-bottom':'-135px'},1000,function(){
+            $(this).detach().appendTo('.adhere').css('margin-bottom','0px').removeAttr('style');
+        })
+    },1000)
+    setInterval(function(){
+        $('.news-rolling').first().animate({'margin-bottom':'-24px'},1000,function(){
+            $(this).detach().appendTo('.roller').css('margin-bottom','0px').removeAttr('style');
+        })
+    },1000)
 })
     
