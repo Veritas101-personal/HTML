@@ -53,7 +53,7 @@ $(function(){
     })
 
     $('.thumb-box').hover(function(){
-        $(this).find('img').toggleClass('display-none');
+        $(this).find('.thumb').toggleClass('display-none');
         $(this).find('.popup-wrap').toggleClass('display-none');
     })
     $('.popup-wrap>a').hover(function(){
@@ -62,14 +62,48 @@ $(function(){
     })
 
     setInterval(function(){
-        $('.ad-image').first().animate({'margin-bottom':'-135px'},1000,function(){
-            $(this).detach().appendTo('.adhere').css('margin-bottom','0px').removeAttr('style');
+        $('.ad-image').first().animate({'margin-top':'-270px'},1000,function(){
+            $('.ad-image').last().detach().prependTo('.link-ad').css('margin-top','-405px');
+            $(this).removeAttr('style');
+            
         })
-    },1000)
+    },3000)
+
     setInterval(function(){
         $('.news-rolling').first().animate({'margin-bottom':'-24px'},1000,function(){
             $(this).detach().appendTo('.roller').css('margin-bottom','0px').removeAttr('style');
         })
     },1000)
+
+    var cardRollingNum = cardRolling();
+    $('.data-content').hover(function(){
+        //마우스가 요소 안에 있을 때
+        clearInterval(cardRollingNum);
+    },function(){
+        //마우스가 요소 밖에 있을 때
+        cardRollingNum = cardRolling();
+    })
+
+    $('.btn-prev').click(function(){
+        if(!$('.data-content>.data').is('animated')){
+            $('.data-content>.data').last().detach().prependTo('.data-content').css('margin-left','-281px');
+            $('.data-content>.data').first().animate({'margin-left':'0'},500);
+        }
+    })
+    $('.btn-next').click(function(e){
+        if(!$('.data-content>.data').is('animated')){
+            $('.data-content>.data').first().animate({'margin-left':'-281px'},500,function(){
+                $(this).detach().appendTo('.data-content').removeAttr('style');
+            })
+        }
+    })
+   
 })
-    
+function cardRolling(){
+    return setInterval(function(){
+        $('.data-content>.data').first().animate({'margin-left':'-281px'},500,function(){
+            $(this).detach().appendTo('.data-content').removeAttr('style');
+        })
+    },3000)
+
+}
