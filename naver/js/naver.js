@@ -28,9 +28,25 @@ $(function(){
         
     })
     $('.btn-menu-set').click(function(){
+        var selMenu = $(this).text();
+        
+        if(tmpMenu.indexOf(selMenu)>=0){
+            tmpMenu.splice(tmpMenu.indexOf(selMenu),1);
+            $(this).find('input').prop('checked',false);
+        }
+        else{
+            if(tmpMenu.length == 5) {
+                alert('최대 5개까지 설정할 수 있습니다.')
+                return;
+            }
+            tmpMenu.push()
+        }
+        
+        
+        /*
         $('.extra-group').toggleClass('display-none');
         $('.extra-choice').toggleClass('display-none');
-
+        */
         var cnt=0;
         var max=5;
 
@@ -65,7 +81,7 @@ $(function(){
         $('.ad-image').first().animate({'margin-top':'-270px'},1000,function(){
             $('.ad-image').last().detach().prependTo('.link-ad').css('margin-top','-405px');
             $(this).removeAttr('style');
-            
+           
         })
     },3000)
 
@@ -97,6 +113,17 @@ $(function(){
             })
         }
     })
+
+    $('.category-content').click(function(e){
+        e.preventDefault();
+        $(this).attr('aria-selected','true');
+        $('.category-content').not($(this)).attr('aria-selected','false');
+        $(this).attr('aria-selected',true);
+        themeBtnView();
+      
+    })
+
+   
    
 })
 function cardRolling(){
@@ -106,4 +133,15 @@ function cardRolling(){
         })
     },3000)
 
+}
+
+function themeBtnView(){
+    $('.category-item .category-content').first().attr('aria-selected');
+    $('.category-item .category-btn-next').removeClass('display-none');
+    if($('.category-item .category-content').first().attr('aria-selected') == 'true') {
+        $('.category-item .category-btn-prev').addClass('display-none');
+    }
+    if($('.category-item .category-content').last().attr('aria-selected') == 'true') {
+        $('.category-item .category-content').addClass('display-none');
+    }
 }

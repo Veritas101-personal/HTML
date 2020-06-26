@@ -1082,6 +1082,37 @@ a[name=dicall]::after{
 .info-area{
     float: right;
 }
+.info{
+    color: gray;
+}
+.new-num{
+    color: black;
+}
+.edit-set{
+    position: relative;
+    margin-left: 14px;
+    color: #505050;
+}
+.edit-set::before{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 4px;
+    content: '';
+    vertical-align: top;
+    vertical-align: -1px;
+    opacity: .7;
+    background-position: -458px -223px;
+}
+.edit-set::after{
+    position: absolute;
+    top: 2px;
+    left: -8px;
+    width: 1px;
+    height: 12px;
+    content: '';
+    background-color: #e4e8eb;
+}
 .theme-groups{
     letter-spacing: -.25px; 
 }
@@ -1092,11 +1123,13 @@ a[name=dicall]::after{
     position: absolute;
     top: 6px;
     left: -23px;
+    z-index: 1;
 }
 .category-btn-next{
     position: absolute;
     top: 6px;
     right: -18px;
+    z-index: 1;
 }
 .category-btn-prev>.ico-btn{
     background-position: 0 -308px;
@@ -1112,7 +1145,6 @@ a[name=dicall]::after{
 }
 .page-view{
     position: relative;
-    z-index: 5;
     overflow: hidden;
     min-height: 100%;
     width: 100%;
@@ -1127,6 +1159,62 @@ a[name=dicall]::after{
     will-change: transform;
     transform: translate3d(0px, 0px, 0px);
 }
+.list-category{
+    position: relative;
+    background-color: #fff;
+}
+.list-category::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    border: 1px solid #dae1e6;
+}
+.list-category::after{
+    display: table;
+    clear: both;
+    table-layout: fixed;
+    content: '';
+}
+.category-item{
+    position: relative;
+    z-index: 1; /* 그냥 border로만 만들면 상관 없는데 .list-category::before로 공간을 잡아 놓아서 z-index를 설정 안하면 이 부분이 눌리지 않음*/
+    float: left;
+    width: 94px;
+}
+.category-item:first-child{
+    width: 92px;
+}
+.category-content{
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 49px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border-right: 1px solid #dae1e6;
+}
+/*탭 색깔모음*/
+.id_enter{
+    color: #fff;
+    background-color: #e65da0;
+    
+}
+.id_sports{
+    color: #fff;
+    background-color: #0147b5;
+}
+.id_cars{
+    color: #fff;
+    background-color: #4a94e1;
+}
+.id_webtoon{
+    color: #fff;
+    background-color: #66c971;
+}
+
 .theme-content{
 
 }
@@ -1435,6 +1523,7 @@ a[name=dicall]::after,
 .btn-prev::before,
 .btn-next::before,
 .air-state::before,
+.edit-set::before,
 .bg-44265f{
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
     background-repeat: no-repeat;
