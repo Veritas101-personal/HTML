@@ -122,6 +122,39 @@ $(function(){
         themeBtnView();
       
     })
+    $('.shop-header .tab').click(function(e){
+        e.preventDefault();
+        $('.shop-header .tab[aria-selected=true]').attr('aria-selected','false');
+        $(this).attr('aria-selected','true');
+        tabRandom();
+    })
+    tabRandom();
+    /* 오른쪽 3번째 컨텐츠에서 상품/쇼핑몰/MEN이 선택되면 선택된 내용에 맞는 body가 보이도록 하는 함수*/
+    function shopView(){
+        var target=$('.shop-header .tab[aria-selected=true]').attr('data-target');
+        $('.')
+    }
+
+    function tabRandom(){
+        var arr=[];
+        $('.shop-content>.group-mall>.mall-area>.link-mall').removeClass('random');
+        for( ; arr.length < 4 ; ){
+            var r = getRandom(1,12);
+            if(arr.indexOf(r)>=0){
+                continue;
+            }
+            arr.push(r);
+            if (r <= 6){
+                $('.shop-content>.group-mall').eq(8).find('.link-mall').eq(r-1).addClass('random');
+            } else {
+                $('.shop-content>.group-mall').eq(8).find('.link-mall').eq(r-7).addClass('random');
+            }
+        }
+    }
+
+    function getRandom(min,max){
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
 
    
    
