@@ -1614,7 +1614,7 @@ a[name=dicall]::after{
 .link-mall:hover{
     text-decoration: underline;
 }
-.link-mall .random{
+.shop-content>.group-mall>.mall-area>.link-mall.random{
     font-weight: bold;
 }
 .group-item{
@@ -1640,9 +1640,9 @@ a[name=dicall]::after{
     color: gray;
 }
 .currentNum{
-    float: left;
-    padding: 5px 0;
-    color: grey;
+    font-weight: bold;
+    margin-right: 4px;
+    color: #202020;
     font-style: normal;
 }
 .btn-box{
@@ -1722,25 +1722,27 @@ a[name=dicall]::after{
 }
 .page-box{
     display: inline-block;
+    font-size: 12px;
     min-width: 80px;
     padding: 5px 0;
     text-align: center;
     vertical-align: top;
     color: grey;
 }
-.page-box .current{
+.page-box .currentPage{
+    font-size: 12px;
     font-weight: 700;
     margin-right: 4px;
     color: #202020;
     font-style: normal;
 }
-.page .btn-prev{
+.btn-page-prev{
     display: inline-block;
     vertical-align: top;
     border: 1px solid #dae1e6;
     background-color: #fff;
 }
-.page .btn-prev::before{
+.btn-page-prev::before{
     display: inline-block;
     width: 5px;
     height: 9px;
@@ -1749,14 +1751,23 @@ a[name=dicall]::after{
     vertical-align: top;
     background-position: 0 -29px;
 }
-.page .btn-next{
+.btn-page-prev:hover:before{
+    display: inline-block;
+    width: 5px;
+    height: 9px;
+    margin: 8px 10px 7px 8px;
+    content: '';
+    vertical-align: top;
+    background-position: -39px -14px;
+}
+.btn-page-next{
     display: inline-block;
     vertical-align: top;
     border: 1px solid #dae1e6;
     background-color: #fff;
 
 }
-.page .btn-next::before{
+.btn-page-next::before{
     display: inline-block;
     width: 5px;
     height: 9px;
@@ -1764,6 +1775,15 @@ a[name=dicall]::after{
     content: '';
     vertical-align: top;
     background-position: -39px 0;
+}
+.btn-page-next:hover:before{
+    display: inline-block;
+    width: 5px;
+    height: 9px;
+    margin: 8px 8px 7px 10px;
+    content: '';
+    vertical-align: top;
+    background-position: -29px -14px;
 }
  /* 미분류 */
 .box-container-body{
@@ -1813,8 +1833,8 @@ a[name=dicall]::after,
 }
 .btn-control .btn-prev:hover:before,
 .btn-control .btn-next:hover:before,
-.page .btn-prev::before,
-.page .btn-next::before
+.btn-page-prev::before,
+.btn-page-next::before
 {
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_shop.2ab465.png);
     background-repeat: no-repeat;

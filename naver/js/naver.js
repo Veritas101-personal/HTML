@@ -124,7 +124,7 @@ $(function(){
     })
     $('.shop-header .tab').click(function(e){
         e.preventDefault();
-        $('.shop-header .tab[aria-selected=true]').attr('aria-selected','false');
+        $('.shop-header .tab').attr('aria-selected','false');
         $(this).attr('aria-selected','true');
         tabRandom();
     })
@@ -136,26 +136,53 @@ $(function(){
     }
 
     function tabRandom(){
-        var arr=[];
+        var arr = [];
         $('.shop-content>.group-mall>.mall-area>.link-mall').removeClass('random');
         for( ; arr.length < 4 ; ){
-            var r = getRandom(1,12);
-            if(arr.indexOf(r)>=0){
+            var r = getRandom(1, 12);
+            if(arr.indexOf(r) >= 0){
                 continue;
             }
             arr.push(r);
             if (r <= 6){
-                $('.shop-content>.group-mall').eq(8).find('.link-mall').eq(r-1).addClass('random');
+                $('.shop-content>.group-mall>.mall-area').eq(0).find('.link-mall').eq(r-1).addClass('random');
             } else {
-                $('.shop-content>.group-mall').eq(8).find('.link-mall').eq(r-7).addClass('random');
+                $('.shop-content>.group-mall>.mall-area').eq(1).find('.link-mall').eq(r-7).addClass('random');
             }
         }
     }
 
-    function getRandom(min,max){
-        return Math.floor(Math.random()*(max-min+1)+min);
+    function getRandom(min, max){
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
+
+    $('.btn-box>a').click(function(e){
+        e.preventDefault();
+        //var currentObj = $('.group-control>.num-box>.currentNum');
+        var currentObj = $(this).parents('.group-control').find('.num-box>.currentNum');
+        //현재 페이지 번호를 가져옴
+        var current = currentObj.text();
+        //이전 버튼인 경우, 해당 버튼을 btn-prev 클래스를 가지고 있음
+        current = parseInt(current);
+        var change;
+        var max = $(this).parents('.group-control').find('.num-box>.currentNum').text();
+        max = parseInt(max);
+        if($(this).hasClass('btn-prev')){
+            change = current - 1;
+            if(change == 0){
+                change = max;
+            }
+        }
+        //다음버튼인 경우
+        else {
+            change = current + 1;
+            if (change == max + 1){
+                change = 1;
+            }
+        }
+        currentObj.text(change);    
+    })
    
    
 })

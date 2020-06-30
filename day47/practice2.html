@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.5.1.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: firebrick;
+            position: relative;
+        }
+        .box{
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <button class="btn1">박스1이동</button>
+    <button class="btn2">박스2이동</button>
+    <button class="btn3">박스3이동</button>
+    <script>
+        $(function(){
+            $('.btn1').click(function(){
+                $('.box1').animate({"left":"300px"},500);
+            })
+            $('.btn2').click(function(){
+                $('.box2').animate({"left":"300px"},500,function(){
+                    $(this).animate({"left":"0px"});
+                });
+            })
+        })
+    </script>
+</body>
+</html>
