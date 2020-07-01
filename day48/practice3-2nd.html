@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.5.1.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 100%;
+            height: 800px;
+        }
+        .box{
+            width: 1000px;
+            height: 700px;
+            margin-top: 50px;
+            border: 1px solid tomato;
+            margin: 0 auto;
+            line-height: 700px;
+        }
+        .login-popup{
+            
+        }
+        .login-box{
+            display: inline-block;
+            width: 600px;
+            height: 300px;
+            border: 1px solid springgreen;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <button class="login-popup">로그인</button>
+            <div class="login-box">
+                <div class="login-head">
+                    
+                </div>
+                <div class="container">
+                    <div class="id-box">
+                        <input type="text" placeholder="아이디" class="id">
+                    </div>
+                    <div class="password-box">
+                        <input type="password" placeholder="패스워드" class="pw">
+                    </div>
+                    <div class="submit">
+                        <button>로그인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        $(function(){
+            $('.login-popup').click(function(){
+                
+            })
+
+        })
+    </script>
+</body>
+</html>

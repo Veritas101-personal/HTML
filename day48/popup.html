@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.5.1.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0 auto;
+        }
+        .container{
+            width: 200px;
+            height: 100px;
+            margin-top: 100px;
+        }
+        .id-box,.password-box{
+            margin-bottom: 15px;
+        }
+        .id-box>#id{
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="id-box">
+            <input type="text" placeholder="아이디" name="id">
+        </div>
+        <div class="password-box">
+            <input type="password" placeholder="패스워드" name="pw">
+        </div>
+        <div class="submit">
+            <button>로그인  </button>
+        </div>
+    </div>
+</body>
+</html>
