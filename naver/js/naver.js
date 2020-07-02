@@ -86,10 +86,10 @@ $(function(){
     },3000)
 
     setInterval(function(){
-        $('.news-rolling').first().animate({'margin-bottom':'-24px'},1000,function(){
+        $('.news-rolling').first().animate({'margin-top':'-24px'},500,function(){
             $(this).detach().appendTo('.roller').css('margin-bottom','0px').removeAttr('style');
         })
-    },1000)
+    },3000)
 
     var cardRollingNum = cardRolling();
     $('.data-content').hover(function(){
@@ -101,13 +101,13 @@ $(function(){
     })
 
     $('.btn-prev').click(function(){
-        if(!$('.data-content>.data').is('animated')){
+        if(!$('.data-content>.data').is(':animated')){
             $('.data-content>.data').last().detach().prependTo('.data-content').css('margin-left','-281px');
             $('.data-content>.data').first().animate({'margin-left':'0'},500);
         }
     })
     $('.btn-next').click(function(e){
-        if(!$('.data-content>.data').is('animated')){
+        if(!$('.data-content>.data').is(':animated')){
             $('.data-content>.data').first().animate({'margin-left':'-281px'},500,function(){
                 $(this).detach().appendTo('.data-content').removeAttr('style');
             })
@@ -188,10 +188,10 @@ $(function(){
 })
 function cardRolling(){
     return setInterval(function(){
-        $('.data-content>.data').first().animate({'margin-left':'-281px'},500,function(){
-            $(this).detach().appendTo('.data-content').removeAttr('style');
+        $('.data-content>.data-container>.data').first().animate({'margin-left':'-281px'},300,function(){
+            $(this).detach().appendTo('.data-container').removeAttr('style');
         })
-    },3000)
+    },4000)
 
 }
 

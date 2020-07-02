@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="//code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://kit.fontawesome.com/df538817a2.js" crossorigin="anonymous"></script>
     <style>
         *{
             padding: 0;
@@ -21,6 +22,29 @@
             width: calc(100% - 60px);
             height: calc(100% - 60px);
             padding: 30px 30px;
+        }
+        .menu{
+            width: 100%;
+            position: relative;
+        }
+        .btn{
+            position: absolute;
+            display: block;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            border: 1px solid grey;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 20px;
+            background-color: white;
+        }
+        .btn-prev{
+            left: -10px;
+        }
+        .btn-next{
+            right: -10px;
         }
         .head{
             width: 100%;
@@ -52,30 +76,59 @@
             display: block;
         }
         .display-none{
-            display: none;
+            display: none !important;
+        }
+        .selected{
+            background-color: firebrick;
+            color: white;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="boundary">
-            <ul class="head">
-                <li class="content-menu" content-open="false">메뉴1</li>
-                <li class="content-menu" content-open="false">메뉴2</li>
-                <li class="content-menu" content-open="false">메뉴3</li>
-            </ul>
+            <div class="menu">
+                <div class="btn btn-prev">
+                    <i class="fas fa-angle-left"></i>
+                </div>
+                <div class="btn btn-next">
+                    <i class="fas fa-angle-right"></i>
+                </div>
+                <ul class="head">
+                    <li class="content-menu" content-open="false" data-target="menu1">메뉴1</li>
+                    <li class="content-menu" content-open="false" data-target="menu2">메뉴2</li>
+                    <li class="content-menu" content-open="false" data-target="menu3">메뉴3</li>
+                </ul>
+            </div>
             <div class="content-box">
-                <div class="content">메뉴메뉴</div>
-                <div class="content display-none">메뉴메뉴메뉴</div>
-                <div class="content display-none">메뉴메뉴메뉴메뉴</div>
+                <div class="content display-none menu1">메뉴메뉴</div>
+                <div class="content display-none menu2">메뉴메뉴메뉴</div>
+                <div class="content display-none menu3">메뉴메뉴메뉴메뉴</div>
             </div>
         </div>
     </div>
     <script>
         $(function(){
             $('.content-menu').click(function(){
-                $(this).first().attr('content-open','true');
-                $(this).first().not().attr('content-open','false');
+                $(this).attr('content-open','true').addClass('selected');
+                $('.content-menu').not($(this)).attr('content-open','false').removeClass('selected');
+                menuSelection();
+            })
+            function menuSelection(){
+                var target = $('.content-menu[content-open=true]').attr('data-target');
+                $('.content-box>.content').addClass('display-none');
+                $('.content-box>.'+ target).removeClass('display-none');
+            }
+
+
+
+            $('.btn').click(function(){
+                if($(this).hasClass('btn-next') == true){
+                    if($('.content-menu').attr('content-open') == false){
+                        $(this).first().attr('content-open','true');
+                    }   
+
+                }
             })
         })
     </script>

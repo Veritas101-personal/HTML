@@ -4,11 +4,12 @@
     padding: 0;
 }
 .container{
-    width: 1160px;
+    width: 1000px;
+    margin: 0 auto;
 }
 .box-head{
     width: 100%;
-    height: 80px;
+    height: 50px;
 }
 .box-image{
     width: 100%;
@@ -17,8 +18,32 @@
 }
 .box-menu{
     width: 100%;
-    height: 60px;
+    height: 40px;
     background-color: lightblue;
+}
+.box-menu::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+.menu_bar{
+    display: flex;
+    position: relative;
+    list-style: none;
+}
+.menu::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+.menu{
+    width: 100px;
+    display: flex; 
+    position: relative;
+    color: white;
+    line-height: 40px;
+    font-weight: bold;
+    float: left;
 }
 .ham{
     visibility: hidden;
@@ -26,7 +51,7 @@
 }
 #ham-menu{
     font-size: 40px;
-    line-height: 60px;
+    line-height: 40px;
     margin: auto;
     color: white;
 }
