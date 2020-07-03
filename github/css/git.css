@@ -1,0 +1,147 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-size: 14px;
+    line-height: 1.5;
+    color: #24292e;
+    background-color: white;
+}
+.main-header{
+    line-height: 40px;
+    padding: 8px 16px;
+    height: 56px;
+    padding-top: 8px!important;
+    padding-bottom: 8px!important;
+    position: relative !important;
+    display: block;
+    color: white;
+    background-color: #24292e;
+}
+.header-container{  
+    display: flex!important;
+    padding-right: 16px!important;
+    padding-left: 16px!important;
+}
+.logo-container{
+    font-size: 32px;
+    background-color: transparent;
+    display: flex;
+}
+
+.homepage{
+    width: 56px;
+    height: 34px;
+    overflow: hidden;
+    float: left;
+    display: inline-block;
+    color: white;
+}
+.menu-container{
+    margin-bottom: 0;
+}
+ul{
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.menu-set{
+    display: flex;
+    list-style: none;
+}
+.reason{
+    margin-right: 16px;
+}
+.menu{
+    margin-right: 16px;
+}
+.menu>a{
+    color: white;
+    text-decoration: none;
+}
+.why{
+
+}
+.reason-hover-menu{
+    width: 300px;
+    border: 0;
+    box-shadow: 0 3px 12px rgba(27,31,35,.15), 0 0 1px rgba(27,31,35,.2);
+    border-radius: 5px;
+    position: absolute;
+    top: 56px;
+    left: -10px;
+    padding: 24px;
+    opacity: 0;
+}
+.display-none{
+    display: none !important;
+}
+.menu-search-sign{
+    display: flex;
+}
+.menu-search{
+    width: 240px;
+    position: relative;
+    margin-bottom: 0 !important;
+    max-width: 300px;
+}
+.search-box{
+    text-align: left;
+}
+.form-control{
+    width: 100%;
+    max-width: 100%;
+    font-weight: 400;
+    background-color: hsla(0,0%,100%,.125);
+    box-shadow: none;
+}
+.search{
+    width: 100%;
+    border: none;
+    color: inherit;
+    background: none;
+
+}
+.border-radius{
+    border-radius: 6px;
+}
+.icon-search{
+    margin-right: 8px;
+    margin-top: 8px;
+}
+.main{
+    display: block;
+}
+.main-image{
+    color: hsla(0,0%,100%,.6);
+    background: url(https://github.githubassets.com/images/modules/site/heroes/simple-codelines.svg),#2b3137;
+    background-position: center 10%;
+    background-size: cover;
+}
+.main-container{
+    padding-right: 16px!important;
+    padding-left: 16px!important;
+}
+.login-introduction{
+    display: flex;
+    align-items: center;
+    margin-right: -24px;
+    margin-left: -24px;
+}
+.text-box{
+    padding-right: 24px;
+    padding-left: 24px;
+    text-align: left;
+}
+@media (min-width: 1012px){
+
+    .main-container{
+        padding-right: 16px!important;
+        padding-left: 16px!important;
+    }
+}
+@media (min-width: 544px){
+
+}
