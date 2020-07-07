@@ -6,6 +6,11 @@
 body{
     font-size: 16px;
 }
+a{
+    color: black;
+    text-decoration: none;
+    
+}
 .container{
     width: 1000px;
     margin: 0 auto;
@@ -108,7 +113,16 @@ body{
     margin: auto;
     color: white;
 }
-
+.sign-box{
+    position: relative;
+    display: inline-flex;
+    top: 10px;
+    float: right;
+    width: 200px;
+}
+.login-box{
+    margin-right: 30px;
+}
 .container::after,
 .search-box::after{
     clear: both;
